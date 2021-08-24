@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="card card-shadow" (click)="redirectTo(games.link)">
+    <ion-card-content>
+      <div class="ref">
+        <strong>{{games.name | translate}}</strong>
+      </div>
+      <img src="{{games.img}}" />
+    </ion-card-content>
+  </ion-card>
+
+  <div class="btn-container">
+    <button class="btn shadow" (click)="redirectTo(config.link)"><ion-icon name="settings"></ion-icon></button>
+    <button class="btn shadow" (click)="redirectTo(info.link)"><ion-icon name="help"></ion-icon></button>
+  </div>
+</ion-content>

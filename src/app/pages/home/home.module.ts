@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { ColorModeModule } from '../../components/color-mode/color-mode.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ColorModeModule,
+    TranslateModule
   ],
   declarations: [HomePage]
 })

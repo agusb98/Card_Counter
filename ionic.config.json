@@ -1,5 +1,7 @@
 {
   "name": "Anotador",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

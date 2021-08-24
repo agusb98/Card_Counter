@@ -1,0 +1,7 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="card" *ngFor="let info of data">
+    <p>
+      <ion-icon (click)="redirectTo(info.link)" name="{{info.logo}}"></ion-icon>
+    </p>
+  </ion-card>
+</ion-content>

@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,90 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// Vars
+:root {
+  --white-background: #ffffff;
+  --black-text: #303438;
+
+  --black-background: #303438;
+  --white-text: #ffffff;
+
+  --global-background: var(--white-background);
+  --global-text: var(--black-text);
+  --global-green: rgb(18, 155, 79);
+}
+
+.btn,
+.icon,
+.card,
+.item,
+.input,
+button,
+ion-content,
+ion-toolbar {
+  --background: none;
+  background: var(--global-background);
+
+  color: var(--global-text);
+  font-family: "Roboto", sans-serif;
+
+  opacity: 87%;
+}
+
+p,
+strong {
+  color: var(--global-text);
+}
+
+.item {
+  opacity: 100%;
+}
+
+ion-header {
+  opacity: 77%;
+}
+
+ion-title {
+  text-align: center;
+}
+
+.card-shadow {
+  -webkit-box-shadow: 2px 2px 5px var(--global-green);
+  -moz-box-shadow: 2px 2px 5px var(--global-green);
+  filter: shadow(color=var(--global-green), direction=135, strength=2);
+}
+
+.btn {
+  border-radius: 100%;
+  padding: 0.8rem;
+}
+
+.shadow {
+  box-shadow: 0 0 20px var(--global-green);
+}
+
+.shadow:active {
+  box-shadow: 0 0 20px rgb(9, 87, 28);
+}
+
+.shadow:disabled {
+  box-shadow: 0 0 20px rgb(149, 10, 10);
+}
+
+ion-toggle {
+  --background-checked: var(--global-green);
+}
+
+ion-item {
+  --border-color: var(--global-green);
+}
+
+.global-green {
+  color: var(--global-green);
+}
+
+ion-content{
+  width: 100%;
+  height: 100%;
+}

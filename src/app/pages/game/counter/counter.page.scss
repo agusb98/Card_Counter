@@ -1,0 +1,43 @@
+ion-col {
+  text-align: center;
+  margin: 0.2rem;
+}
+
+.notification {
+  text-align: center;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  top: 35%;
+}
+
+img {
+  width: 7rem;
+  height: 6rem;
+}
+
+.fosforo {
+  width: 100%;
+}
+
+.container {
+  min-height: 18rem;
+  width: 100%;
+}
+
+button {
+  margin-bottom: 1rem;
+  min-width: 4rem;
+  min-height: 4rem;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+#btn-chin {
+  margin: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}

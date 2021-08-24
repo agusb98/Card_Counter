@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <app-truco
+    *ngIf="name == 'truco' && !game"
+    (game)="getResult($event)"
+    (winner)="getWinner($event)"
+  ></app-truco>
+
+  <app-chinchon
+  *ngIf="name == 'chinchon' && !game"
+  (game)="getResult($event)"
+  (winner)="getWinner($event)"
+></app-chinchon>
+
+  <div class="notification" *ngIf="game">
+    <strong class="global-green">{{ "Ganó" | translate}}: {{ winner.name }} </strong>
+    <p *ngFor="let player of game.players">{{ player.name}}: {{ player.count}} </p>
+
+    <button (click)="clickExit()" class="btn shadow">
+      {{"Salir" | translate}}
+    </button>
+
+    <button (click)="clickRetry()" class="btn shadow">
+      {{"Repetir" | translate}}
+    </button>
+  </div>
+</ion-content>

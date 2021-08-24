@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <ion-slides [options]="slideOptsOne">
+    <ion-slide *ngFor="let link of links" (click)="clickImg(link)">
+      <ion-card class="card">
+        <img src="{{link.img}}" />
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-list>
+    <ion-item class="item" *ngFor="let game of games" (click)="onClick(game.name)">
+      <strong>{{game.name}}</strong>
+    </ion-item>
+  </ion-list>
+</ion-content>

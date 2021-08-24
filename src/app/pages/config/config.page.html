@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="card">
+    <strong>{{ "Modo Día" | translate }}</strong>
+    <app-color-mode></app-color-mode>
+  </ion-card>
+
+  <ion-card class="card">
+    <strong>{{ "Idioma" | translate }}</strong>
+    <ion-card-content style="height: 4rem">
+      <app-lang-mode></app-lang-mode>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card">
+    <strong>{{ "Sonidos" | translate }}</strong>
+    <app-sound-mode></app-sound-mode>
+  </ion-card>
+</ion-content>

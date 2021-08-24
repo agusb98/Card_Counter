@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true">
+  <div class="notification" *ngIf="data.max == 0">
+    <div class="title">
+      <strong>{{ "Seleccione" | translate }} {{ "Límite" | translate }}</strong>
+    </div>
+
+    <button
+      *ngFor="let max of getMaxScores()"
+      (click)="setMax(max.num)"
+      class="btn shadow"
+    >
+      {{ max.num }}
+    </button>
+  </div>
+
+  <div class="notification" *ngIf="data.max && !start">
+    <div class="title">
+      <strong
+        >{{ "Cantidad" | translate }} {{ "Jugadores" | translate }}:
+        {{ data.players.length }}</strong
+      >
+    </div>
+
+    <button class="btn shadow" (click)="setQuantityPlayers('+')">+</button>
+    <button
+      [disabled]="data.players.length < 2"
+      class="btn shadow"
+      (click)="setQuantityPlayers('-')"
+    >
+      -
+    </button>
+
+    <div class="title">
+      <button
+        [disabled]="data.players.length < 2"
+        class="btn shadow"
+        (click)="confirmQuantity()"
+      >
+        {{ "Confirmar" | translate }}
+      </button>
+    </div>
+  </div>
+
+  <ion-grid *ngIf="start && !getWinner()">
+    <ion-row>
+      <ion-col class="principal-col" *ngFor="let player of data.players">
+        <div>
+          <ion-input
+            class="input"
+            type="text"
+            placeholder="{{ player.name }}"
+            maxlength="15"
+            (change)="setName(player, $event)"
+          >
+          </ion-input>
+
+          <p *ngIf="isWinning(player)"><ion-icon name="trophy"></ion-icon></p>
+          <p *ngIf="!isWinning(player)" style="color: transparent">
+            <ion-icon name="trophy"></ion-icon>
+          </p>
+
+          <div>
+            <button (click)="setCount(player, '-')" class="btn shadow">
+              {{ "Restar" | translate }}
+            </button>
+          </div>
+
+          <div class="container" (click)="setCount(player, '+')">
+            <div class="fosforo">
+              <strong>{{ player.count }}</strong>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

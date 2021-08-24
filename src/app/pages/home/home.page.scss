@@ -1,0 +1,55 @@
+.ref {
+  background-color: rgb(48, 52, 56);
+  background: linear-gradient(
+    45deg,
+    rgba(48, 52, 56, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  position: absolute;
+  top: 74.2%;
+  left: 31.6%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
+  opacity: 85%;
+  width: 8.8rem;
+  border-radius: 2rem;
+  -webkit-animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(500px);
+    transform: translateX(100px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(500px);
+    transform: translateX(100px);
+  }
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+
+ion-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

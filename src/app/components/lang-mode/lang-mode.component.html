@@ -1,0 +1,13 @@
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button class="langs" color="light">
+    <ion-icon class="icon" name="language" style="font-size: 3.5rem"></ion-icon>
+  </ion-fab-button>
+
+  <ion-fab-list side="start">
+    <div *ngFor="let lang of list">
+      <ion-fab-button (click)="onClick(lang.name)">
+        <img src="{{ lang.img }}" />
+      </ion-fab-button>
+    </div>
+  </ion-fab-list>
+</ion-fab>

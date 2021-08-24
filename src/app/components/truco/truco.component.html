@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true">
+  <div class="notification" *ngIf="!data.max">
+
+    <div class="title">
+      <strong>{{ "Seleccione" | translate }} {{ "Límite" | translate }}</strong>
+    </div>
+
+    <button
+      *ngFor="let max of getMaxScores()"
+      (click)="setMax(max.num)"
+      class="btn shadow"
+    >
+      {{max.num}}
+    </button>
+  </div>
+
+  <ion-grid *ngIf="data.max && !getWinner()">
+    <ion-row>
+      <ion-col class="principal-col" *ngFor="let player of data.players">
+        <div>
+          <ion-input
+            class="input"
+            type="text"
+            placeholder="{{ player.name }}"
+            maxlength="15"
+            (change)="setName(player, $event)"
+          >
+          </ion-input>
+
+          <p *ngIf="getTopScore(player)">{{ getTopScore(player) }}</p>
+          <p *ngIf="!getTopScore(player)" style="color: transparent">.</p>
+
+          <div>
+            <button (click)="setCount(player, '-')" class="btn shadow">
+              {{"Restar" | translate}}
+            </button>
+          </div>
+
+          <div class="container" (click)="setCount(player, '+')">
+            <div class="fosforo" *ngFor="let fosforo of getFosforoScore(player)">
+              <img src="{{ fosforo.img }}" />
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
